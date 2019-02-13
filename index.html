@@ -1,42 +1,68 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- CLEAN MARKUP = GOOD KARMA.
+      Hi source code lover,
+
+      you're a curious person and a fast learner ;)
+      Let's make something beautiful together. Contribute on Github:
+      https://github.com/webslides/webslides
+
+      Thanks,
+      @jlantunez.
+    -->
+
+  <!-- SEO -->
   <title>Reactive programming with Rx</title>
 
-  <link rel="stylesheet" href="css/reveal.css" />
-  <link rel="stylesheet" href="css/theme/moradul.css" />
+  <!-- URL CANONICAL -->
+  <!-- <link rel="canonical" href="http://your-url.com/"> -->
 
-  <!-- Theme used for syntax highlighting of code -->
-  <link rel="stylesheet" href="lib/css/zenburn.css" />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext"
+    rel="stylesheet">
 
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.type = "text/css";
-    link.href = window.location.search.match(/print-pdf/gi)
-      ? "css/print/pdf.css"
-      : "css/print/paper.css";
-    document.getElementsByTagName("head")[0].appendChild(link);
-  </script>
+  <!-- CSS WebSlides -->
+  <link rel="stylesheet" type='text/css' media='all' href="static/css/webslides.css">
+
+  <!-- Optional - CSS SVG Icons (Font Awesome) -->
+  <link rel="stylesheet" type='text/css' media='all' href="static/css/svg-icons.css">
+
+
+  <link rel="stylesheet" type='text/css' media='all' href="static/css/custom.css">
 </head>
 
 <body>
-  <div class="reveal">
-    <div class="slides">
-      <section data-state="cover">
-        <h1>Reactive programming</h1>
-        <h1>with Rx</h1>
+  <main role="main">
+    <article id="webslides">
+      <!-- Quick Guide
+          - Each parent <section> in the <article id="webslides"> element is an individual slide.
+          - Vertical sliding = <article id="webslides" class="vertical">
+          - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+
+      <section class="bg-purple">
+        <h1 class="text-landing wrap">Reactive programming with Rx</h1>
       </section>
+
       <section>
-        <h3>Ok, so what is reactive programming?</h3>
+        <h2 class="text-intro wrap">A quick story</h2>
+      </section>
+
+      <section>
+        <span class="background-center" style="background-image: url('static/images/danny-glover.jpg')"></span>
+      </section>
+
+      <section>
+        <h3>So what is reactive programming then?</h3>
         <h1>🤷‍♀️</h1>
 
-        <aside class="notes" data-markdown>
+        <aside>
           - paradigma de programación declarativa
           - data streams
           - propagación del cambio
@@ -47,7 +73,7 @@
       <section>
         <h3>And why should I care?</h3>
         <h1>😴</h1>
-        <aside class="notes" data-markdown>
+        <aside>
           - Manejar data streams de forma más eficiente (y generar código más legible)
           - UI: animaciones, eventos, transformación de datos API
           - Server side: concurrencia, back pressure, circuit breakers, etc
@@ -81,80 +107,79 @@
           - programación funcional
         </aside>
       </section>
+
       <section>
-        <section>
-          <h2>Building blocks</h2>
-        </section>
-        <section>
-          <h3>Observable 👀</h3>
-          <img class="plain" src="examples/observable-scratch.png" />
-          <aside class="notes" data-markdown>
-            - Source of data
-            - Creado con la clase observable
-            - next para emitir valores
-            - error para emitir error
-            - complete para terminar
-            - devuelve la función de unsubscribe
-            - subscribe para leer valores
-            - (cold vs hot)
-          </aside>
-        </section>
+        <h2>Building blocks</h2>
+      </section>
+      <section>
+        <h3>Observable 👀</h3>
+        <img class="plain" src="examples/observable-scratch.png" />
+        <aside class="notes" data-markdown>
+          - Source of data
+          - Creado con la clase observable
+          - next para emitir valores
+          - error para emitir error
+          - complete para terminar
+          - devuelve la función de unsubscribe
+          - subscribe para leer valores
+          - (cold vs hot)
+        </aside>
+      </section>
 
-        <section>
-          <h3>Observable: from 👀</h3>
-          <img class="plain" src="examples/observable-from.png" />
-          <aside class="notes" data-markdown>
-            - array, eventos, ajax, fichero, etc
-          </aside>
-        </section>
+      <section>
+        <h3>Observable: from 👀</h3>
+        <img class="plain" src="examples/observable-from.png" />
+        <aside class="notes" data-markdown>
+          - array, eventos, ajax, fichero, etc
+        </aside>
+      </section>
 
-        <section>
-          <h3>Subscription 📝</h3>
-          <img class="plain" src="examples/subscription.png" />
-          <aside class="notes" data-markdown>
-            - Asíncrona
-            - se puede desuscribir
-            - onComplete, onError
-          </aside>
-        </section>
+      <section>
+        <h3>Subscription 📝</h3>
+        <img class="plain" src="examples/subscription.png" />
+        <aside class="notes" data-markdown>
+          - Asíncrona
+          - se puede desuscribir
+          - onComplete, onError
+        </aside>
+      </section>
 
-        <section>
-          <h3>Data operators 🚦🔪</h3>
-          <img class="plain" src="examples/data-operators.png" />
-          <aside class="notes" data-markdown>
-            - Métodos funcionales de colecciones sobre datos asíncronos
-            - Ultra eficiente
-            - uso de pipe
-          </aside>
-        </section>
+      <section>
+        <h3>Data operators 🚦🔪</h3>
+        <img class="plain" src="examples/data-operators.png" />
+        <aside class="notes" data-markdown>
+          - Métodos funcionales de colecciones sobre datos asíncronos
+          - Ultra eficiente
+          - uso de pipe
+        </aside>
+      </section>
 
-        <section>
-          <h3>Observable operators 🚦🔪</h3>
-          <img class="plain" src="examples/observable-operators.png" />
-          <aside class="notes" data-markdown>
-            - ¿Que pasa si nuestros operadores devuelven otros observables?
-            - Ejemplo: detalles de una lista de resultados
-          </aside>
-        </section>
+      <section>
+        <h3>Observable operators 🚦🔪</h3>
+        <img class="plain" src="examples/observable-operators.png" />
+        <aside class="notes" data-markdown>
+          - ¿Que pasa si nuestros operadores devuelven otros observables?
+          - Ejemplo: detalles de una lista de resultados
+        </aside>
+      </section>
 
-        <section>
-          <h3>And many others...</h3>
-          <ul>
-            <li>Combination:
-              <pre>concat, zip, merge...</pre>
-            </li>
-            <li>Conditional:
-              <pre>every...</pre>
-            </li>
-            <li>Error handling:
-              <pre>retry, retryWhen...</pre>
-            </li>
-            <li>Filters:
-              <pre>takeWhile, skip, debounce, throttle...</pre>
-            </li>
-            <li>... (<a href="https://rxjs.dev/operator-decision-tree">https://rxjs.dev/operator-decision-tree)</a></li>
-          </ul>
-        </section>
+      <section>
+        <h3>And many others...</h3>
+        <ul>
+          <li>Combination:
+            <pre>concat, zip, merge...</pre>
+          </li>
+          <li>Conditional:
+            <pre>every...</pre>
+          </li>
+          <li>Error handling:
+            <pre>retry, retryWhen...</pre>
+          </li>
+          <li>Filters:
+            <pre>takeWhile, skip, debounce, throttle...</pre>
+          </li>
+          <li>... (<a href="https://rxjs.dev/operator-decision-tree">https://rxjs.dev/operator-decision-tree)</a></li>
+        </ul>
       </section>
 
       <section>
@@ -175,31 +200,26 @@
           - runjs
         </aside>
       </section>
-    </div>
-  </div>
+    </article>
+  </main>
 
-  <script src="lib/js/head.min.js"></script>
-  <script src="js/reveal.min.js"></script>
+  <!-- A global footer
 
+     <footer role="contentinfo">
+      <div class="wrap">
+        <p>An <a href="https://github.com/webslides/webslides">open source solution</a>, by <a href="https://twitter.com/webslides">@webslides</a>.</p>
+      </div>
+    </footer>  -->
+
+  <!-- Required -->
+  <script src="static/js/webslides.js"></script>
   <script>
-    // More info about config & dependencies:
-    // - https://github.com/hakimel/reveal.js#configuration
-    // - https://github.com/hakimel/reveal.js#dependencies
-    Reveal.initialize({
-      dependencies: [
-        { src: "plugin/markdown/marked.js" },
-        { src: "plugin/markdown/markdown.js" },
-        { src: "plugin/notes/notes.js", async: true },
-        {
-          src: "plugin/highlight/highlight.js",
-          async: true,
-          callback: function () {
-            hljs.initHighlightingOnLoad();
-          }
-        }
-      ]
-    });
+    window.ws = new WebSlides();
   </script>
+
+  <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+  <script defer src="static/js/svg-icons.js"></script>
+
 </body>
 
 </html>
