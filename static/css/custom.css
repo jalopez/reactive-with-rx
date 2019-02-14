@@ -2,6 +2,32 @@ aside {
   display: none;
 }
 
+.jobs {
+  margin: 32px;
+}
+
+.jobs li {
+  list-style-type: none;
+  margin: 8px;
+}
+
+.jobs .company {
+  font-weight: 400;
+}
+
+.jobs .cabify {
+  width: 72px;
+  vertical-align: middle;
+}
+
+.jobs .small {
+  font-size: 10px;
+}
+
+blockquote {
+  margin: 32px auto;
+}
+
 /* @import url(./cabify.woff); */
 /* moradul: #7350ff;
   body {
