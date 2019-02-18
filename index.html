@@ -98,7 +98,7 @@
       </section>
 
       <section>
-        <h3 class="wrap">Why should I learn?</h3>
+        <h3 class="wrap">Why should I learn it?</h3>
         <aside>
           - Manejar data streams de forma más eficiente (y generar código más legible)
           - UI: animaciones, eventos, transformación de datos API
@@ -117,7 +117,7 @@
             An API for asynchronous programming with observable streams
           </blockquote>
         </div>
-        <aside class="notes" data-markdown>
+        <aside>
           - Observer pattern
           - Iterator pattern
           - programación funcional
@@ -142,14 +142,8 @@
 
       <section class="slide-center">
         <span class="background-center" style="background-image: url('static/images/observable.png')"></span>
-      </section>
-      <!-- <section>
-          <h2>Building blocks</h2>
-      </section>
-      <section>
-        <h3>Observable 👀</h3>
-        <img class="plain" src="examples/observable-scratch.png" />
-        <aside class="notes" data-markdown>
+        <aside>
+          Observable:
           - Source of data
           - Creado con la clase observable
           - next para emitir valores
@@ -159,26 +153,59 @@
           - subscribe para leer valores
           - (cold vs hot)
         </aside>
-      </section>
-
-      <section>
-        <h3>Observable: from 👀</h3>
-        <img class="plain" src="examples/observable-from.png" />
-        <aside class="notes" data-markdown>
-          - array, eventos, ajax, fichero, etc
-        </aside>
-      </section>
-
-      <section>
-        <h3>Subscription 📝</h3>
-        <img class="plain" src="examples/subscription.png" />
-        <aside class="notes" data-markdown>
+        <aside>
+          Suscripción:
           - Asíncrona
           - se puede desuscribir
           - onComplete, onError
         </aside>
+        <aside>
+          Observable.from:
+          - array, eventos, ajax, fichero, etc
+        </aside>
       </section>
 
+      <section class="slide-center">
+        <span class="background-right" style="background-image: url('static/images/show-me-the-code.jpg');"></span>
+        <div class="wrap">
+          <h4><a href="https://runkit.com/javilp/5c67e259aecdeb001100544d" target="_blank">Show me the code!</a></h4>
+        </div>
+      </section>
+
+      <section class="wrap">
+        <h3>Tons of operators</h3>
+        <h5>Combination:</h5>
+        <pre>concat, zip, merge, race...</pre>
+        <h5>Error handling:</h5>
+        <pre>retry, retryWhen...</pre>
+        <h5>Filters:</h5>
+        <pre>takeWhile, skip, debounce, throttle, filter...</pre>
+        <h5>Transformation:</h5>
+        <pre>buffer, groupBy, mergeMap, switchMap, ...</pre>
+        <h5>... (<a href="https://rxjs.dev/operator-decision-tree"
+            target="_blank">https://rxjs.dev/operator-decision-tree)</a></h5>
+      </section>
+
+      <section class="slide-top">
+        <h2 class="aligncenter">Real world example</h2>
+        <img class="aligncenter size-70" src="static/images/birdseye.gif" />
+      </section>
+
+      <section>
+        <img class="content-center" src="static/images/birdseye.png" />
+      </section>
+
+      <section class="slide-center">
+        <h1 class="content-center">Thanks!! 💜</h1>
+      </section>
+
+      <section>
+        <h2>Backup</h2>
+        <ul>
+          <li><a href="https://runkit.com/javilp/5c67f6c218e49200121aaabe">Solutions</a></li>
+        </ul>
+      </section>
+      <!--
       <section>
         <h3>Data operators 🚦🔪</h3>
         <img class="plain" src="examples/data-operators.png" />
@@ -196,25 +223,6 @@
           - ¿Que pasa si nuestros operadores devuelven otros observables?
           - Ejemplo: detalles de una lista de resultados
         </aside>
-      </section>
-
-      <section>
-        <h3>And many others...</h3>
-        <ul>
-          <li>Combination:
-            <pre>concat, zip, merge...</pre>
-          </li>
-          <li>Conditional:
-            <pre>every...</pre>
-          </li>
-          <li>Error handling:
-            <pre>retry, retryWhen...</pre>
-          </li>
-          <li>Filters:
-            <pre>takeWhile, skip, debounce, throttle...</pre>
-          </li>
-          <li>... (<a href="https://rxjs.dev/operator-decision-tree">https://rxjs.dev/operator-decision-tree)</a></li>
-        </ul>
       </section>
 
       <section>
@@ -238,13 +246,6 @@
     </article>
   </main>
 
-  <!-- A global footer
-
-     <footer role="contentinfo">
-      <div class="wrap">
-        <p>An <a href="https://github.com/webslides/webslides">open source solution</a>, by <a href="https://twitter.com/webslides">@webslides</a>.</p>
-      </div>
-    </footer>  -->
 
   <!-- Required -->
   <script src="static/js/webslides.js"></script>
